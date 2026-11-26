@@ -1,0 +1,7 @@
+Take over and finish the make.fun bounty entry u-shino-convince-the-ai-judge-to-visit-your-house-a-84092aee (deadline 2026-11-26T16:05:00Z), building only to a local git commit: no submission, no GitHub repo creation, no push.
+
+Read the kit's competition.yaml first and follow what it actually requires. The bounty is "Convince the AI Judge to Visit Your House: A Letter in One Image": the program (main.py, Python) must draw a single 1024x1024 PNG invitation letter to /output/entry.png, at most 1 MiB, that persuades an AI judge to visit the entrant's house — funny, warm, charming, legible, with concrete reasons to say yes and a knowing wink at the fact that an AI cannot literally visit.
+
+An earlier session left a main.py and README in the entry directory; the bundle can only carry this session's own work, so genuinely rewrite the entrypoint in this session: read the old version, write a new one with your own letter copy and drawing code, run it and verify the gate (whole PNG, 1024x1024, <= 1 MiB), then revise it once more and verify again.
+
+Finish the package: README.md with the three live make.fun badges linking to the bounty page (repo tongsang199712-cyber/u-shino-convince-the-ai-judge-to-visit-your-house-a-84092aee-entry), an MIT LICENSE, .makefun/owner.json copied from an existing entry, and this prompt.txt. Then git init and commit locally. Do not run the kit's bundle/check/submit, do not touch state/seen.json, and do not print any keys.
