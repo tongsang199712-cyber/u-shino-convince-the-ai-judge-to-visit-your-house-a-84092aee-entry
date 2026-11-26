@@ -264,9 +264,22 @@ def draw_tomato(c, cx, cy):
 def build_image():
     c = Canvas(W, H, PAPER)
 
+    # Faint deterministic paper speckle, drawn before anything else so
+    # the text and frame sit on top of it.  Fixed LCG seed: no clock,
+    # no hash, no randomness -- the same pixels every run.
+    seed = 20261126
+    for _ in range(420):
+        seed = (1103515245 * seed + 12345) & 0x7FFFFFFF
+        sx = 40 + seed % (W - 80)
+        seed = (1103515245 * seed + 12345) & 0x7FFFFFFF
+        sy = 40 + seed % (H - 80)
+        c.set(sx, sy, (244, 232, 204))
+
     # A soft inner frame, like the border printed on real stationery.
     c.rect_outline(30, 30, W - 30, H - 30, 10, PAPER_EDGE)
     c.rect_outline(58, 58, W - 58, H - 58, 3, TOMATO)
+    # A hairline third rule, so the border reads as a double frame.
+    c.rect_outline(70, 70, W - 70, H - 70, 1, PAPER_EDGE)
 
     margin = 104
     avail = W - 2 * margin  # 816 px of text width
